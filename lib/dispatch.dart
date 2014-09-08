@@ -142,7 +142,7 @@ class DispatchWatcher{
       if(!f.containsKey('message')) 
         return this.streams.emit(f); 
       Funcs.when(Valids.isFunction(this.message),(){
-        if(Valids.falsy(this.message(f['message']))) return null;
+        if(Valids.falsy(this.message(f))) return null;
         this.watchMan.emit(f);
       });
       Funcs.when(Valids.isRegExp(this.message),(){
