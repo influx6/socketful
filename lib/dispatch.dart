@@ -16,7 +16,7 @@ abstract class Store{
 }
 
 abstract class StoreHouse{
-  final MapDecorator storehouse = new MapDecorator<String,Tag>();
+  final MapDecorator storehouse = MapDecorator.create();
   final SingleStore store;
 
   StoreHouse(this.store);
@@ -126,7 +126,7 @@ class DispatchWatcher{
   
   static create(f,m) => new DispatchWatcher(f,m);
   DispatchWatcher(dispatch,this.message){
-    if(this.message is! RegExp && this.message is! String) 
+    if(this.message is! RegExp && this.message is! String || this.message is! Function) 
       throw "message must either be a RegExp/a String for dispatchwatchers";
     this.watchMan = Middleware.create((f){
       this.streams.emit(f);
