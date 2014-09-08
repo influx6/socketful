@@ -126,8 +126,8 @@ class DispatchWatcher{
   
   static create(f,m) => new DispatchWatcher(f,m);
   DispatchWatcher(dispatch,this.message){
-    if(this.message is! RegExp && this.message is! String || this.message is! Function) 
-      throw "message must either be a RegExp/a String for dispatchwatchers";
+    if(this.message is! RegExp && this.message is! String && this.message is! Function) 
+      throw "message must either be a RegExp/a String/a Function for dispatch watchers";
     this.watchMan = Middleware.create((f){
       this.streams.emit(f);
     });
