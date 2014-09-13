@@ -8,8 +8,3 @@ dependencies:
   hub: any
   dispatch: any
   browser: any
-dev_dependencies:
-  requestful: any
-dependency_overrides:
-  hub:
-    path: ../hub
