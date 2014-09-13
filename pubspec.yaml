@@ -2,7 +2,7 @@ name: socketful
 version: 0.0.2
 author: Alexander Adeniyin Ewetumo <trinoxf@gmail.com>
 description:   extendable socket(websocket,tcpsocket) api for both client and server
-homepage: http://influx.github.com/socketful.dart
+homepage: http://influx.github.com/socketful.git
 dependencies:
   streamable: any
   hub: any
