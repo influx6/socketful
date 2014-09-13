@@ -15,11 +15,7 @@ void main(){
         'route':'sock_io',
       });
       var records = socks.of('/records');
-      records.listen((f){
-        Funcs.tagLog('socket',f);
-        Funcs.tagLog('path',f.identity);
-        Funcs.tagLog('id',f.ID);
-      });
+
       records.listen((bridge){
 
         bridge.onSend.listen(Funcs.tag('bridge-outtransmission'));
